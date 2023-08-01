@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./MainBg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+::-moz-selection {
+  background-color: none;
+  color: orange;
+}
+
+::selection {
+  background-color: none;
+  color: orange;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 18, 32, 0.5215686275);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FBAE3C;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  border: none;
+  background-color: rgba(0, 18, 32, 0.5215686275);
+  color: #FBAE3C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header .Logo {
+  width: 60px;
+}
+#header h1 {
+  font-size: 25px;
+}
+
+#ErrorShow {
+  background-color: tomato;
+  width: 38%;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  font-size: 18px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-weight: bolder;
+  display: none;
+  transition: all 1s ease-in;
+}
+
+.SearchBox {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.SearchBox #LocationSearch {
+  width: 450px;
+  padding: 1em;
+  padding-left: 2em;
+  border: none;
+  border-radius: 20px;
+  color: #FBAE3C;
+  font-weight: bolder;
+  font-size: 14px;
+}
+.SearchBox #LocationSearch:focus {
+  outline: none;
+}
+.SearchBox #LocationSearch::-moz-placeholder {
+  color: #FBAE3C;
+  font-weight: bold;
+}
+.SearchBox #LocationSearch::placeholder {
+  color: #FBAE3C;
+  font-weight: bold;
+}
+.SearchBox #LoadDataBtn {
+  padding: 0.8em;
+  width: 175px;
+  border-radius: 20px;
+  border: none;
+  color: #FBAE3C;
+  background-color: white;
+  font-size: bold;
+  font-size: 14px;
+}
+.SearchBox #LoadDataBtn:hover {
+  cursor: pointer;
+  transform: scale(0.97);
+  background-color: rgba(255, 255, 255, 0.956);
+}
+
+#WeatherCardContainer {
+  width: 100%;
+  height: 400px;
+  padding: 0.5em;
+  display: flex;
+}
+#WeatherCardContainer .Box {
+  background-color: #2B3252;
+  border-radius: 15px;
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: none;
+}
+#WeatherCardContainer .Box h3 {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(249, 212, 66, 0.2352941176);
+  color: white;
+  font-size: 20px;
+}
+#WeatherCardContainer .Box h1 {
+  color: tomato;
+  font-size: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+#WeatherCardContainer #WeatherCard {
+  background-color: #2B3252;
+  border-radius: 15px;
+  width: 400px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+#WeatherCardContainer #WeatherCard #LocationName {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(249, 212, 66, 0.2352941176);
+  color: white;
+  font-size: 22px;
+}
+#WeatherCardContainer #WeatherCard .WeatherIconBox {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+#WeatherCardContainer #WeatherCard .WeatherIconBox #WeatherIcon {
+  width: 80px;
+}
+#WeatherCardContainer #WeatherCard .WeatherIconBox #Weatherdescription {
+  color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+#WeatherCardContainer #WeatherCard .WeatherInfo {
+  margin-top: 15px;
+  width: 80%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(46, 139, 86, 0.477);
+  color: white;
+  gap: 15px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+#WeatherCardContainer #WeatherCard .WeatherInfo .icon {
+  position: relative;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  color: #FBAE3C;
+  transform: translate(-10px);
+}
+#WeatherCardContainer #WeatherCard .WeatherInfo:hover .icon {
+  border: none;
+  transform: scale(1.1) translate(0px);
+  background-color: #FBAE3C;
+  color: white;
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    background-image: url(./MObileBg.png);
+  }
+  #header .Logo {
+    width: 70px;
+  }
+  #header h1 {
+    font-size: 20px;
+  }
+  .SearchBox #LocationSearch {
+    width: 95%;
+    padding: 1em;
+  }
+  .SearchBox #LocationSearch:focus {
+    outline: none;
+  }
+  .SearchBox #LocationSearch::-moz-placeholder {
+    color: #FBAE3C;
+    font-weight: bold;
+  }
+  .SearchBox #LocationSearch::placeholder {
+    color: #FBAE3C;
+    font-weight: bold;
+  }
+  #WeatherCardContainer .Box h1 {
+    font-size: 20px;
+    padding: 0.5em;
+  }
+  #WeatherCardContainer #WeatherCard .WeatherInfo {
+    width: 95%;
+  }
+  #WeatherCardContainer #WeatherCard .WeatherInfo .icon {
+    transform: translate(0px);
+  }
+}/*# sourceMappingURL=app.css.map */

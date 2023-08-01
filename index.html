@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Application</title>
+    <link rel="shortcut icon" href="./Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="app.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <img src="Logo.png" alt="Image-Not-Found" class="Logo" />
+      <h1>Weather-Application</h1>
+    </header>
+
+    <p id="ErrorShow">Error MSG</p>
+    <div class="SearchBox">
+      <input
+        type="text"
+        id="LocationSearch"
+        placeholder="Enter Your City Name"
+      />
+      <button id="LoadDataBtn">Load Data</button>
+    </div>
+
+    <section id="WeatherCardContainer">
+      <div class="Box">
+        <h3>Weather Information</h3>
+        <h1 class="Msg">City Weather Information Is Not Available.</h1>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
