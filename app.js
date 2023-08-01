@@ -1,10 +1,8 @@
-// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=;
+const kuchvhai = "7f0117dcd127d932b96f488a1931eea9";
 const Header = document.querySelector("#header");
 const LocationSearchInput = document.querySelector("#LocationSearch");
 const LoadDataBtn = document.querySelector("#LoadDataBtn");
 const WeatherCardContainer = document.querySelector("#WeatherCardContainer");
-const WeatherCard = document.querySelector("#WeatherCard");
-const Box = document.querySelector(".Box");
 const ErrorShow = document.querySelector("#ErrorShow");
 
 
@@ -24,21 +22,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 //Render The Load Data
 function RenderData(LocatinName) {
-    let Promise = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${LocatinName}&appid=7f0117dcd127d932b96f488a1931eea9`);
+    let Promise = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${LocatinName}&appid=${kuchvhai}`);
     Promise.then((response) => {
         return response.json();
     }).then((data) => {
         if (data.cod == 404) {
-             WeatherCardContainer.innerHTML = "";
-             ErrorShow.style.display = "flex";
-             LocationSearchInput.value = "";
-             LocationSearchInput.focus();
-             ErrorShow.innerText = `${data.message}`;
-             LocationSearchInput.focus();
-             setTimeout(HideErrorMessage, 2000);
+            WeatherCardContainer.innerHTML = "";
+            ErrorShow.style.display = "flex";
+            LocationSearchInput.value = "";
+            LocationSearchInput.focus();
+            ErrorShow.innerText = `${data.message}`;
+            LocationSearchInput.focus();
+            setTimeout(HideErrorMessage, 2000);
             return;
         }
-        Box.style.display = "none";
         WeatherCardContainer.innerHTML = "";
         let Icon = data.weather[0].icon;
         let IconUrl = `http://openweathermap.org/img/w/${Icon}.png`;
@@ -65,7 +62,7 @@ function RenderData(LocatinName) {
       <span id="Humidity">${data.main.humidity + " %"}</span>
     </p>
   </div>`;
-  
+
         WeatherCardContainer.insertAdjacentHTML("beforeend", WeatherInfo);
         LocationSearchInput.value = "";
         LocationSearchInput.focus();
